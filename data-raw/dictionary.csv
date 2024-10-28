@@ -1,0 +1,18 @@
+directory,file_name,variable_name,variable_type,description
+data,worldhdi.rda,hdi_rank,double,World Rank in Human Development Index as of 2022
+data,worldhdi.rda,country,double,Official name of the country
+data,worldhdi.rda,hdi_1990,double,HDI in 1990
+data,worldhdi.rda,hdi_2000,double,HDI in 2000
+data,worldhdi.rda,hdi_2010,double,HDI in 2010
+data,worldhdi.rda,hdi_2015,double,HDI in 2015
+data,worldhdi.rda,hdi_2019,double,HDI in 2019
+data,worldhdi.rda,hdi_2020,double,HDI in 2020
+data,worldhdi.rda,hdi_2021,double,HDI in 2021
+data,worldhdi.rda,hdi_2022,double,HDI in 2022
+data,worldhdi.rda,rank_change_2015_2022,double,Change in rank from 2015 to 2022
+data,worldhdi.rda,avg_growth_1990_2000,double,Average annual growth in country's HDI between 1990-2000
+data,worldhdi.rda,avg_growth_2000_2010,double,Average annual growth in country's HDI between 2000-2010
+data,worldhdi.rda,avg_growth_2010_2022,double,Average annual  growth in country's HDI between 2010-2022
+data,worldhdi.rda,avg_growth_1990_2022,double,Average annual  growth in country's HDI between 1990-2022
+data,worldhdi.rda,hdi_tier,character,"HDI Tier as defined by UNDP {Very high [0.8-1.0), High [0.7 - 0.8), Medium [0.55-0.7), Low (<0.55)}"
+data,worldhdi.rda,iso3c,character,ISO3 code for the country
