@@ -1,0 +1,26 @@
+# --------------------------------------------
+# CITATION file created with {cffr} R package
+# See also: https://docs.ropensci.org/cffr/
+# --------------------------------------------
+
+cff-version: 1.2.0
+message: 'To cite package "worldhdi" in publications use:'
+type: software
+title: 'worldhdi: Human Development Index Worldwide 1990-2022'
+version: 0.1.0
+doi: 10.5281/zenodo.14006110
+abstract: 'This package provides details about Human Development Index across the world
+  from 1990 to 2022. 193 countries are included in the dataset. It also includes data
+  aggregated by regions.'
+year: 2024
+authors:
+- family-names: Dubey
+  given-names: Yash
+  email: ydubey@ethz.ch
+  orcid: https://orcid.org/0009-0001-2849-970X
+contact:
+- family-names: Dubey
+  given-names: Yash
+  email: ydubey@ethz.ch
+  orcid: https://orcid.org/0009-0001-2849-970X
+
