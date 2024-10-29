@@ -1,11 +1,12 @@
 Package: worldhdi
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Human Development Index Worldwide 1990-2022
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Author: Yash Dubey
+Maintainer: Yash Dubey <ydubey@ethz.ch>
+Description: This package provides details about Human Development Index across the world from 1990 to 2022. 193 countries are included in the dataset. It also includes data aggregated by regions.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
+Depends: 
+    R (>= 2.10)

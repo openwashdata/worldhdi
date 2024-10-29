@@ -1,0 +1,190 @@
+---
+output: github_document
+always_allow_html: true
+editor_options: 
+  markdown: 
+    wrap: 72
+  chunk_output_type: console
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%",
+  message = FALSE,
+  warning = FALSE,
+  fig.retina = 2,
+  fig.align = 'center'
+)
+```
+
+# worldhdi
+
+<!-- badges: start -->
+
+[![License: CC BY
+4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+
+<!-- badges: end -->
+
+The goal of worldhdi is to present Human Development Index Data from 1990-2022
+in a tidy format. The data is sourced from the United Nations Development
+
+## Installation
+
+You can install the development version of worldhdi from
+[GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("openwashdata/worldhdi")
+```
+
+```{r}
+## Run the following code in console if you don't have the packages
+## install.packages(c("dplyr", "knitr", "readr", "stringr", "gt", "kableExtra"))
+library(dplyr)
+library(knitr)
+library(readr)
+library(stringr)
+library(gt)
+library(kableExtra)
+library(tidyverse)
+library(lubridate)
+```
+
+Alternatively, you can download the individual datasets as a CSV or XLSX
+file from the table below.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+extdata_path <- "https://github.com/openwashdata/worldhdi/raw/main/inst/extdata/"
+
+read_csv("data-raw/dictionary.csv") |> 
+  distinct(file_name) |> 
+  dplyr::mutate(file_name = str_remove(file_name, ".rda")) |> 
+  dplyr::rename(dataset = file_name) |> 
+  mutate(
+    CSV = paste0("[Download CSV](", extdata_path, dataset, ".csv)"),
+    XLSX = paste0("[Download XLSX](", extdata_path, dataset, ".xlsx)")
+  ) |> 
+  knitr::kable()
+
+```
+
+## Data
+
+The package provides access to tidy human development index (HDI) for 193 countries from 1990-2022. The data is sourced from the United Nations Development Programme (UNDP)
+
+```{r}
+library(worldhdi)
+```
+
+### worldhdi
+
+The dataset `worldhdi` contains data about human development index (HDI) for 193 countries from 1990-2022.
+It has `r nrow(worldhdi)` observations and `r ncol(worldhdi)` variables
+
+```{r}
+worldhdi |> 
+  head(3) |> 
+  gt::gt() |>
+  gt::as_raw_html()
+```
+
+For an overview of the variable names, see the following table.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+readr::read_csv("data-raw/dictionary.csv") |>
+  dplyr::filter(file_name == "worldhdi.rda") |>
+  dplyr::select(variable_name:description) |> 
+  knitr::kable() |> 
+  kableExtra::kable_styling("striped") |> 
+  kableExtra::scroll_box(height = "200px")
+```
+
+
+## Example
+
+```{r}
+library(worldhdi)
+library(ggplot2)
+library(rnaturalearthdata)
+library(rnaturalearth)
+
+# 2022 HDI worldwide 
+world <- ne_countries(scale = "medium", returnclass = "sf")
+
+world_map_data <- world |> left_join(worldhdi, by = c("iso_a3" = "iso3c"))
+
+hdi_colors <- c("#d73027", "#fc8d59", "#fee08b", "#fdae61", "#fdd49e", "#feedde", 
+                "#d9ef8b", "#a6d96a", "#66bd63", "#1a9850", "#00441b", "#003300", "#001a00", 
+                "#e0e0e0") 
+
+ggplot(data = world_map_data) +
+  geom_sf(aes(fill = cut(hdi_2022, 
+                         breaks = c(-Inf, 0.399, 0.449, 0.499, 0.549, 0.599, 0.649, 0.699, 
+                                    0.749, 0.799, 0.849, 0.899, 0.950, Inf), 
+                         labels = c("≤ 0.399", "0.400–0.449", "0.450–0.499", "0.500–0.549", 
+                                    "0.550–0.599", "0.600–0.649", "0.650–0.699", 
+                                    "0.700–0.749", "0.750–0.799", "0.800–0.849", 
+                                    "0.850–0.899", "0.900–0.950", "≥ 0.950")))) +
+  scale_fill_manual(values = hdi_colors, na.value = "gray90", name = "HDI 2022 Brackets") +
+  theme_minimal() +
+  labs(title = "World HDI (2022)") +
+  theme(axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid = element_blank())
+```
+
+### Which countries saw the biggest increases in HDI over this period? 
+```{r}
+worldhdi |> 
+  filter(!is.na(avg_growth_1990_2022)) |> 
+  arrange(desc(avg_growth_1990_2022)) |> 
+  select(country, avg_growth_1990_2022) |>
+  head(10) |> 
+  gt::gt() |>
+  gt::as_raw_html()
+
+```
+
+### Trends in HDI by region
+```{r}
+# Use the rows where country is Organisation for Economic Co-operation and Development,
+# Arab States, East Asia and the Pacific, Europe and Central Asia, Latin America and the Caribbean, World and plot the hdi trends using hdi_1990, hdi_2000, hdi_2010, hdi_2015, hdi_2022
+
+worldhdi |>
+  filter(country %in% c("Organisation for Economic Co-operation and Development", 
+                        "Arab States", "East Asia and the Pacific", 
+                        "Europe and Central Asia", "Latin America and the Caribbean", "World", "Sub-Saharan Africa", "South Asia")) |>
+  pivot_longer(cols = starts_with("hdi"), 
+               names_to = "year", 
+               values_to = "hdi") |>
+  mutate(year = gsub("hdi_", "", year),  # Remove "hdi_" prefix
+         year = ymd(paste0(year, "-01-01")),  # Convert to date format
+         country = ifelse(country == "Organisation for Economic Co-operation and Development", "OECD", country)) |>
+  ggplot(aes(x = year, y = hdi, group = country, color = country)) +
+  geom_line() +
+  geom_point() +
+  scale_x_date(date_labels = "%Y", date_breaks = "10 years") +  # Format x-axis as date and show every 10 years
+  labs(title = "Trends in HDI by Region", y = "HDI", x = "Year", color = "Country") +  # Set legend title
+  theme_minimal()
+```
+
+## License
+
+Data are available as
+[CC-BY](https://github.com/openwashdata/worldhdi/blob/main/LICENSE.md).
+
+## Citation
+
+Please cite this package using:
+
+```{r}
+citation("worldhdi")
+```
