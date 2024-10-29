@@ -33,6 +33,7 @@ knitr::opts_chunk$set(
 
 The goal of worldhdi is to present Human Development Index Data from 1990-2022
 in a tidy format. The data is sourced from the United Nations Development
+
 ## Installation
 
 You can install the development version of worldhdi from
