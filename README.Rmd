@@ -134,7 +134,7 @@ ggplot(data = world_map_data) +
                                     "0.850–0.899", "0.900–0.950", "≥ 0.950")))) +
   scale_fill_manual(values = hdi_colors, na.value = "gray90", name = "HDI 2022 Brackets") +
   theme_minimal() +
-  labs(title = "World HDI Map (2022)", subtitle = "Colored by HDI Brackets") +
+  labs(title = "World HDI (2022)") +
   theme(axis.text = element_blank(),
         axis.ticks = element_blank(),
         panel.grid = element_blank())
@@ -160,7 +160,7 @@ worldhdi |>
 worldhdi |>
   filter(country %in% c("Organisation for Economic Co-operation and Development", 
                         "Arab States", "East Asia and the Pacific", 
-                        "Europe and Central Asia", "Latin America and the Caribbean", "World")) |>
+                        "Europe and Central Asia", "Latin America and the Caribbean", "World", "Sub-Saharan Africa", "South Asia")) |>
   pivot_longer(cols = starts_with("hdi"), 
                names_to = "year", 
                values_to = "hdi") |>

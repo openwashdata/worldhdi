@@ -14,5 +14,5 @@ data,worldhdi.rda,avg_growth_1990_2000,double,Average annual growth in country's
 data,worldhdi.rda,avg_growth_2000_2010,double,Average annual growth in country's HDI between 2000-2010
 data,worldhdi.rda,avg_growth_2010_2022,double,Average annual  growth in country's HDI between 2010-2022
 data,worldhdi.rda,avg_growth_1990_2022,double,Average annual  growth in country's HDI between 1990-2022
-data,worldhdi.rda,hdi_tier,character,"HDI Tier as defined by UNDP {Very high [0.8-1.0), High [0.7 - 0.8), Medium [0.55-0.7), Low (<0.55)}"
+data,worldhdi.rda,tier_hdi,character,"HDI Tier as defined by UNDP {Very high [0.8-1.0), High [0.7 - 0.8), Medium [0.55-0.7), Low (<0.55)}"
 data,worldhdi.rda,iso3c,character,ISO3 code for the country
