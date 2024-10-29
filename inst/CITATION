@@ -1,0 +1,11 @@
+
+bibentry(bibtype = "Misc",
+         key = "dubey",
+         title = "worldhdi: Human Development Index Worldwide 1990-2022",
+         author = person(given = "Yash",
+                         family = "Dubey",
+                         email = "ydubey@ethz.ch"),
+         doi = "10.5281/zenodo.14006110",
+         abstract = "This package provides details about Human Development Index across the world from 1990 to 2022. 193 countries are included in the dataset. It also includes data aggregated by regions.",
+         year = 2024,
+         version = "0.1.0")
