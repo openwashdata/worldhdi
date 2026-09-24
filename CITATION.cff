@@ -1,26 +1,43 @@
-# --------------------------------------------
-# CITATION file created with {cffr} R package
+# ------------------------------------------------
+# CITATION.cff file created with {cffr} R package
 # See also: https://docs.ropensci.org/cffr/
-# --------------------------------------------
-
+# ------------------------------------------------
+ 
 cff-version: 1.2.0
 message: 'To cite package "worldhdi" in publications use:'
-type: software
-title: 'worldhdi: Human Development Index Worldwide 1990-2022'
-version: 0.1.0
-doi: 10.5281/zenodo.14006110
-abstract: 'This package provides details about Human Development Index across the world
-  from 1990 to 2022. 193 countries are included in the dataset. It also includes data
-  aggregated by regions.'
-year: 2024
+type: dataset
+license: CC-BY-4.0
+title: 'worldhdi: Human Development Index Worldwide 1990-2022 (2024)'
+version: 1.0.2
+doi: 10.5281/zenodo.14006109
+abstract: Provides Human Development Index (HDI) trends from 1990 to 2022 for 195
+  countries and territories (193 of them ranked) and 15 UNDP aggregates (development
+  groups, regions and the world), from the UNDP Human Development Report 2023/2024
+  Statistical Annex. It includes HDI ranks, changes in rank and average annual HDI
+  growth.
 authors:
 - family-names: Dubey
   given-names: Yash
   email: ydubey@ethz.ch
   orcid: https://orcid.org/0009-0001-2849-970X
+- family-names: Schöbitz
+  given-names: Lars
+  email: lschoebitz@ethz.ch
+  orcid: https://orcid.org/0000-0003-2196-5015
+repository-code: https://github.com/openwashdata/worldhdi
+url: https://openwashdata.github.io/worldhdi/
+date-released: '2024-10-29'
 contact:
-- family-names: Dubey
-  given-names: Yash
-  email: ydubey@ethz.ch
-  orcid: https://orcid.org/0009-0001-2849-970X
+- family-names: Schöbitz
+  given-names: Lars
+  email: lschoebitz@ethz.ch
+  orcid: https://orcid.org/0000-0003-2196-5015
+keywords:
+- open data
+- washdata
+- human development index
+- hdi
+- undp
+- development indicators
+- sdgs
 

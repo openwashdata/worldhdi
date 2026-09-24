@@ -1,5 +1,5 @@
 
-url: https://github.com/openwashdata/worldhdi
+url: https://openwashdata.github.io/worldhdi/
 template:
   bootstrap: 5
   includes:
