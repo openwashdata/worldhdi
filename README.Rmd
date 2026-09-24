@@ -17,6 +17,7 @@ knitr::opts_chunk$set(
   out.width = "100%",
   message = FALSE,
   warning = FALSE,
+  screenshot.force = FALSE,
   fig.retina = 2,
   fig.align = 'center'
 )
@@ -29,11 +30,13 @@ knitr::opts_chunk$set(
 [![License: CC BY
 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14006110.svg)](https://zenodo.org/doi/10.5281/zenodo.14006110)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14006109.svg)](https://zenodo.org/doi/10.5281/zenodo.14006109)
 <!-- badges: end -->
 
-The goal of worldhdi is to present Human Development Index Data from 1990-2022
-in a tidy format. The data is sourced from the United Nations Development
+The goal of worldhdi is to present Human Development Index (HDI) data
+from 1990 to 2022 in a tidy format. The data are sourced from the
+United Nations Development Programme (UNDP) Human Development Report
+2023/2024 Statistical Annex.
 
 ## Installation
 
@@ -79,7 +82,11 @@ read_csv("data-raw/dictionary.csv") |>
 
 ## Data
 
-The package provides access to tidy human development index (HDI) for 193 countries from 1990-2022. The data is sourced from the United Nations Development Programme (UNDP)
+The package provides access to tidy Human Development Index (HDI) data
+for 195 countries and territories and 15 UNDP aggregates from 1990 to
+2022. The data are sourced from the United Nations Development
+Programme (UNDP) Human Development Report 2023/2024 Statistical Annex,
+published under the Creative Commons Attribution 3.0 IGO licence.
 
 ```{r}
 library(worldhdi)
@@ -87,8 +94,10 @@ library(worldhdi)
 
 ### worldhdi
 
-The dataset `worldhdi` contains data about human development index (HDI) for 193 countries from 1990-2022.
-It has `r nrow(worldhdi)` observations and `r ncol(worldhdi)` variables
+The dataset `worldhdi` contains Human Development Index (HDI) data for
+195 countries and territories (193 of them ranked) and 15 UNDP
+aggregates from 1990 to 2022. It has `r nrow(worldhdi)` observations and
+`r ncol(worldhdi)` variables.
 
 ```{r}
 worldhdi |> 

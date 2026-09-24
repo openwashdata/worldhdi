@@ -22,3 +22,4 @@ X-schema.org-spatialCoverage: Worldwide
 X-schema.org-temporalCoverage: 1990-01-01/2022-12-31
 Date: 2024-10-29
 Config/roxygen2/version: 8.0.0
+Config/Needs/website: rmarkdown, dplyr, knitr, readr, stringr, gt, kableExtra, tidyverse, lubridate, ggplot2, sf, rnaturalearth, rnaturalearthdata
