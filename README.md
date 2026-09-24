@@ -8,12 +8,14 @@
 [![License: CC BY
 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14006110.svg)](https://zenodo.org/doi/10.5281/zenodo.14006110)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14006109.svg)](https://zenodo.org/doi/10.5281/zenodo.14006109)
+[![R-CMD-check](https://github.com/openwashdata/worldhdi/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/openwashdata/worldhdi/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-The goal of worldhdi is to present Human Development Index Data from
-1990-2022 in a tidy format. The data is sourced from the United Nations
-Development
+The goal of worldhdi is to present Human Development Index (HDI) data
+from 1990 to 2022 in a tidy format. The data are sourced from the United
+Nations Development Programme (UNDP) Human Development Report 2023/2024
+Statistical Annex.
 
 ## Installation
 
@@ -47,9 +49,11 @@ file from the table below.
 
 ## Data
 
-The package provides access to tidy human development index (HDI) for
-193 countries from 1990-2022. The data is sourced from the United
-Nations Development Programme (UNDP)
+The package provides access to tidy Human Development Index (HDI) data
+for 195 countries and territories and 15 UNDP aggregates from 1990 to
+2022. The data are sourced from the United Nations Development Programme
+(UNDP) Human Development Report 2023/2024 Statistical Annex, published
+under the Creative Commons Attribution 3.0 IGO licence.
 
 ``` r
 library(worldhdi)
@@ -57,9 +61,9 @@ library(worldhdi)
 
 ### worldhdi
 
-The dataset `worldhdi` contains data about human development index (HDI)
-for 193 countries from 1990-2022. It has 210 observations and 17
-variables
+The dataset `worldhdi` contains Human Development Index (HDI) data for
+195 countries and territories (193 of them ranked) and 15 UNDP
+aggregates from 1990 to 2022. It has 210 observations and 17 variables.
 
 ``` r
 worldhdi |> 
@@ -68,7 +72,7 @@ worldhdi |>
   gt::as_raw_html()
 ```
 
-<div id="msgtolmnfv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="wjfedvavwa" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
   &#10;  <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false" style="-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;" bgcolor="#FFFFFF">
   <thead style="border-style: none;">
     <tr class="gt_col_headings" style="border-style: none; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3;">
@@ -144,8 +148,7 @@ worldhdi |>
 <td headers="tier_hdi" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">Very High</td>
 <td headers="iso3c" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">ISL</td></tr>
   </tbody>
-  &#10;  
-</table>
+  &#10;</table>
 </div>
 
 For an overview of the variable names, see the following table.
@@ -153,209 +156,358 @@ For an overview of the variable names, see the following table.
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:200px; ">
 
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
+
 <thead>
+
 <tr>
+
 <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+
 variable_name
 </th>
+
 <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+
 variable_type
 </th>
+
 <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+
 description
 </th>
+
 </tr>
+
 </thead>
+
 <tbody>
+
 <tr>
+
 <td style="text-align:left;">
+
 hdi_rank
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
-World Rank in Human Development Index as of 2022
+
+World rank in the Human Development Index as of 2022
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 country
 </td>
+
 <td style="text-align:left;">
-double
+
+character
 </td>
+
 <td style="text-align:left;">
-Official name of the country
+
+Name of the country, territory or UNDP aggregate
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 hdi_1990
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 HDI in 1990
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 hdi_2000
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 HDI in 2000
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 hdi_2010
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 HDI in 2010
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 hdi_2015
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 HDI in 2015
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 hdi_2019
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 HDI in 2019
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 hdi_2020
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 HDI in 2020
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 hdi_2021
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 HDI in 2021
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 hdi_2022
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
+
 HDI in 2022
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 rank_change_2015_2022
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
-Change in rank from 2015 to 2022
+
+Change in HDI rank from 2015 to 2022
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 avg_growth_1990_2000
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
-Average annual growth in country’s HDI between 1990-2000
+
+Average annual HDI growth between 1990 and 2000, in percent
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 avg_growth_2000_2010
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
-Average annual growth in country’s HDI between 2000-2010
+
+Average annual HDI growth between 2000 and 2010, in percent
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 avg_growth_2010_2022
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
-Average annual growth in country’s HDI between 2010-2022
+
+Average annual HDI growth between 2010 and 2022, in percent
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 avg_growth_1990_2022
 </td>
+
 <td style="text-align:left;">
+
 double
 </td>
+
 <td style="text-align:left;">
-Average annual growth in country’s HDI between 1990-2022
+
+Average annual HDI growth between 1990 and 2022, in percent
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 tier_hdi
 </td>
+
 <td style="text-align:left;">
+
 character
 </td>
+
 <td style="text-align:left;">
-HDI Tier as defined by UNDP {Very high \[0.8-1.0), High \[0.7 - 0.8),
-Medium \[0.55-0.7), Low (\<0.55)}
+
+HDI tier in 2022 as defined by UNDP: Very High (0.800 and above), High
+(0.700 to 0.799), Medium (0.550 to 0.699), Low (below 0.550)
 </td>
+
 </tr>
+
 <tr>
+
 <td style="text-align:left;">
+
 iso3c
 </td>
+
 <td style="text-align:left;">
+
 character
 </td>
+
 <td style="text-align:left;">
-ISO3 code for the country
+
+ISO 3166-1 alpha-3 country code; missing for the aggregates
 </td>
+
 </tr>
+
 </tbody>
+
 </table>
 
 </div>
@@ -393,7 +545,7 @@ ggplot(data = world_map_data) +
         panel.grid = element_blank())
 ```
 
-<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-7-1.png" alt="" width="100%" style="display: block; margin: auto;" />
 
 ### Which countries saw the biggest increases in HDI over this period?
 
@@ -407,7 +559,7 @@ worldhdi |>
   gt::as_raw_html()
 ```
 
-<div id="rpwrikrtgy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="twftnwpvfd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
   &#10;  <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false" style="-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;" bgcolor="#FFFFFF">
   <thead style="border-style: none;">
     <tr class="gt_col_headings" style="border-style: none; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3;">
@@ -437,8 +589,7 @@ worldhdi |>
     <tr style="border-style: none;"><td headers="country" class="gt_row gt_left" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: left;" valign="middle" align="left">China</td>
 <td headers="avg_growth_1990_2022" class="gt_row gt_right" style="border-style: none; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">1.547965</td></tr>
   </tbody>
-  &#10;  
-</table>
+  &#10;</table>
 </div>
 
 ### Trends in HDI by region
@@ -465,7 +616,7 @@ worldhdi |>
   theme_minimal()
 ```
 
-<img src="man/figures/README-unnamed-chunk-9-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-9-1.png" alt="" width="100%" style="display: block; margin: auto;" />
 
 ## License
 
@@ -480,18 +631,21 @@ Please cite this package using:
 citation("worldhdi")
 #> To cite package 'worldhdi' in publications use:
 #> 
-#>   Dubey Y (2024). "worldhdi: Human Development Index Worldwide
-#>   1990-2022." doi:10.5281/zenodo.14006110
-#>   <https://doi.org/10.5281/zenodo.14006110>.
+#>   Dubey Y, Schöbitz L (2024). "worldhdi: Human Development Index
+#>   Worldwide 1990-2022 (2024)." doi:10.5281/zenodo.14006109
+#>   <https://doi.org/10.5281/zenodo.14006109>.
+#>   <https://openwashdata.github.io/worldhdi/>.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
-#>   @Misc{dubey,
-#>     title = {worldhdi: Human Development Index Worldwide 1990-2022},
-#>     author = {Yash Dubey},
-#>     doi = {10.5281/zenodo.14006110},
-#>     abstract = {This package provides details about Human Development Index across the world from 1990 to 2022. 193 countries are included in the dataset. It also includes data aggregated by regions.},
+#>   @Misc{dubey_etall:2024,
+#>     title = {worldhdi: Human Development Index Worldwide 1990-2022 (2024)},
+#>     author = {Yash Dubey and Lars Schöbitz},
 #>     year = {2024},
-#>     version = {0.1.0},
+#>     doi = {10.5281/zenodo.14006109},
+#>     url = {https://openwashdata.github.io/worldhdi/},
+#>     abstract = {Provides Human Development Index (HDI) trends from 1990 to 2022 for 195 countries and territories (193 of them ranked) and 15 UNDP aggregates (development groups, regions and the world), from the UNDP Human Development Report 2023/2024 Statistical Annex. It includes HDI ranks, changes in rank and average annual HDI growth.},
+#>     keywords = {open data,washdata,human development index,hdi,undp,development indicators,sdgs},
+#>     version = {1.0.2},
 #>   }
 ```

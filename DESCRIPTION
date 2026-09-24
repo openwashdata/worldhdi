@@ -1,15 +1,25 @@
 Package: worldhdi
 Type: Package
 Title: Human Development Index Worldwide 1990-2022 (2024)
-Version: 0.1.0
-Author: Yash Dubey
-Maintainer: Yash Dubey <ydubey@ethz.ch>
-Description: This package provides details about Human Development Index across the world from 1990 to 2022. 193 countries are included in the dataset. It also includes data aggregated by regions.
-License: What license is it under?
+Version: 1.0.2
+Description: Provides Human Development Index (HDI) trends from 1990 to 2022 for 195 countries and territories (193 of them ranked) and 15 UNDP aggregates (development groups, regions and the world), from the UNDP Human Development Report 2023/2024 Statistical Annex. It includes HDI ranks, changes in rank and average annual HDI growth.
+License: CC BY 4.0
 Encoding: UTF-8
 LazyData: true
 Depends: 
     R (>= 2.10)
-Authors@R: 
-    person("Yash", "Dubey", role = c("aut", "cre"))
-RoxygenNote: 7.3.2
+Authors@R: c(
+    person("Yash", "Dubey", , "ydubey@ethz.ch", role = "aut",
+           comment = c(ORCID = "0009-0001-2849-970X")),
+    person("Lars", "Schöbitz", , "lschoebitz@ethz.ch", role = "cre",
+           comment = c(ORCID = "0000-0003-2196-5015"))
+  )
+Language: en-GB
+URL: https://github.com/openwashdata/worldhdi, https://openwashdata.github.io/worldhdi/
+BugReports: https://github.com/openwashdata/worldhdi/issues
+X-schema.org-keywords: open data, washdata, human development index, hdi, undp, development indicators, sdgs
+X-schema.org-spatialCoverage: Worldwide
+X-schema.org-temporalCoverage: 1990-01-01/2022-12-31
+Date: 2024-10-29
+Config/roxygen2/version: 8.0.0
+Config/Needs/website: rmarkdown, dplyr, knitr, readr, stringr, gt, kableExtra, tidyverse, lubridate, ggplot2, sf, rnaturalearth, rnaturalearthdata
