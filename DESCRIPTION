@@ -2,14 +2,16 @@ Package: worldhdi
 Type: Package
 Title: Human Development Index Worldwide 1990-2022 (2024)
 Version: 0.1.0
-Author: Yash Dubey
-Maintainer: Yash Dubey <ydubey@ethz.ch>
 Description: This package provides details about Human Development Index across the world from 1990 to 2022. 193 countries are included in the dataset. It also includes data aggregated by regions.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
 Depends: 
     R (>= 2.10)
-Authors@R: 
-    person("Yash", "Dubey", role = c("aut", "cre"))
+Authors@R: c(
+    person("Yash", "Dubey", , "ydubey@ethz.ch", role = "aut",
+           comment = c(ORCID = "0009-0001-2849-970X")),
+    person("Lars", "Schöbitz", , "lschoebitz@ethz.ch", role = "cre",
+           comment = c(ORCID = "0000-0003-2196-5015"))
+  )
 RoxygenNote: 7.3.2
