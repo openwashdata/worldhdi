@@ -8,7 +8,7 @@ message: 'To cite package "worldhdi" in publications use:'
 type: dataset
 license: CC-BY-4.0
 title: 'worldhdi: Human Development Index Worldwide 1990-2022 (2024)'
-version: 0.1.0
+version: 1.0.2
 doi: 10.5281/zenodo.14006109
 abstract: Provides Human Development Index (HDI) trends from 1990 to 2022 for 195
   countries and territories (193 of them ranked) and 15 UNDP aggregates (development
