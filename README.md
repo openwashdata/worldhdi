@@ -12,6 +12,8 @@
 [![R-CMD-check](https://github.com/openwashdata/worldhdi/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/openwashdata/worldhdi/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
+A data package published by [openwashdata](https://openwashdata.org).
+
 The goal of worldhdi is to present Human Development Index (HDI) data
 from 1990 to 2022 in a tidy format. The data are sourced from the United
 Nations Development Programme (UNDP) Human Development Report 2023/2024
