@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# worldhdi
+# worldhdi <a href="https://openwashdata.org"><img src="man/figures/logo.png" align="right" width="120" alt="openwashdata" /></a>
 
 <!-- badges: start -->
 
@@ -11,8 +11,6 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14006109.svg)](https://zenodo.org/doi/10.5281/zenodo.14006109)
 [![R-CMD-check](https://github.com/openwashdata/worldhdi/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/openwashdata/worldhdi/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
-
-A data package published by [openwashdata](https://openwashdata.org).
 
 The goal of worldhdi is to present Human Development Index (HDI) data
 from 1990 to 2022 in a tidy format. The data are sourced from the United
@@ -626,6 +624,8 @@ Data are available as
 [CC-BY](https://github.com/openwashdata/worldhdi/blob/main/LICENSE.md).
 
 ## Citation
+
+Published by openwashdata, <https://openwashdata.org>.
 
 Please cite this package using:
 

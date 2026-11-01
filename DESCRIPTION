@@ -23,7 +23,7 @@ X-schema.org-spatialCoverage: Worldwide
 X-schema.org-temporalCoverage: 1990-01-01/2022-12-31
 Date: 2024-10-29
 Config/roxygen2/version: 8.0.0
-Config/Needs/website: rmarkdown, dplyr, knitr, readr, stringr, gt, kableExtra, tidyverse, lubridate, ggplot2, sf, rnaturalearth, rnaturalearthdata
+Config/Needs/website: rmarkdown, dplyr, knitr, readr, stringr, gt, kableExtra, tidyverse, lubridate, ggplot2, sf, rnaturalearth, rnaturalearthdata, brand.yml
 Config/washr/funding: This project was funded by the [Open Research Data Program of the ETH Board](https://ethrat.ch/en/eth-domain/open-research-data/).
 Config/washr/analytics-domain: openwashdata.github.io
 Config/washr/doi-provider: zenodo
@@ -33,4 +33,5 @@ Config/washr/publisher: Published by [openwashdata](https://openwashdata.org), a
 Config/washr/home: https://openwashdata.org
 Config/washr/catalog: https://openwashdata.org/pages/gallery/data/
 Config/washr/community: This package is part of [openwashdata](https://openwashdata.org). Browse the [data catalogue](https://openwashdata.org/pages/gallery/data/) or get the [newsletter](https://openwashdata.org/pages/newsletter/).
-Config/washr/version: 1.2.1
+Config/washr/version: 1.2.2
+Config/washr/brand: v1.1.0
