@@ -3,8 +3,6 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14006109.svg)](https://zenodo.org/doi/10.5281/zenodo.14006109)
 [![R-CMD-check](https://github.com/openwashdata/worldhdi/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/openwashdata/worldhdi/actions/workflows/R-CMD-check.yaml)
 
-A data package published by [openwashdata](https://openwashdata.org).
-
 The goal of worldhdi is to present Human Development Index (HDI) data
 from 1990 to 2022 in a tidy format. The data are sourced from the United
 Nations Development Programme (UNDP) Human Development Report 2023/2024
@@ -192,6 +190,8 @@ Data are available as
 [CC-BY](https://github.com/openwashdata/worldhdi/blob/main/LICENSE.md).
 
 ## Citation
+
+Published by openwashdata, <https://openwashdata.org>.
 
 Please cite this package using:
 
